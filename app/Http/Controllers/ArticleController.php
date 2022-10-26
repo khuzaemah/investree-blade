@@ -44,13 +44,13 @@ class ArticleController extends Controller
 
         $input = $request->all();
 
-        if($image = $request->file('image/')){
+        if ($image = $request->file('image')){
             $destinationPath = 'images/';
             $articleImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $articleImage);
             $input['image'] = "$articleImage";
         }
-
+        
         Article::create($input);
 
         return redirect()->route('articles.index')->with('success', 'Article created successfully.');
