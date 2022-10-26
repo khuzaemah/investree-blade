@@ -4,7 +4,7 @@
     <div class="row" style="margin-top: 20px;">
         <div class="col-lg-12 margin-tb">
             <div style="text-align: center;">
-                <h4>Laravel 9 CRUD Application with Image Upload</h4>
+                <h4>Laravel 9 CRUD Article</h4>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('articles.create') }}"> 

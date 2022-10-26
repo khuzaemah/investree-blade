@@ -103,7 +103,7 @@ class ArticleController extends Controller
             unset($input['image']);
         }
 
-        $article->uppdate($input);
+        $article->update($input);
 
         return  redirect()->route('articles.index')->with('success', 'Article updated successfully');
     }
