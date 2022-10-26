@@ -15,7 +15,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::latest()->paginate('5');
-        return view('article.index', compact('articles'))->with('i', (request()->input('page', 1) -1) *5);
+        return view('articles.index', compact('articles'))->with('i', (request()->input('page', 1) -1) *5);
     }
 
     /**
@@ -25,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('articles.create');
     }
 
     /**
@@ -53,7 +53,7 @@ class ArticleController extends Controller
 
         Article::create($input);
 
-        return redirect()->route('article.index')->with('success', 'Article created successfully.');
+        return redirect()->route('articles.index')->with('success', 'Article created successfully.');
     }
 
     /**
@@ -64,7 +64,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('article.show', compact('article'));
+        return view('articles.show', compact('article'));
     }
 
     /**
@@ -75,7 +75,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('article.edit', compact('article'));
+        return view('articles.edit', compact('article'));
     }
 
     /**
@@ -105,7 +105,7 @@ class ArticleController extends Controller
 
         $article->uppdate($input);
 
-        return  redirect()->route('article.index')->with('success', 'Article updated successfully');
+        return  redirect()->route('articles.index')->with('success', 'Article updated successfully');
     }
 
     /**
@@ -118,6 +118,6 @@ class ArticleController extends Controller
     {
         $article->delete();
 
-        return redirect()->route('article.index')->with('success', 'Article deleted successfully');
+        return redirect()->route('articles.index')->with('success', 'Article deleted successfully');
     }
 }
