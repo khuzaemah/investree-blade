@@ -8,7 +8,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('articles.create') }}"> 
-                    Add New Product
+                    Add Article
                 </a>
             </div>
         </div>
