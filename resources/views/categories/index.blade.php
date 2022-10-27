@@ -32,11 +32,9 @@
             <tr>
                 <td>{{ ++$i }}</td>
                 <td>{{ $category->name }}</td>
-                <td>{{ $category->user_id }}</td>
+                <td>{{ $category->user->name }}</td>
                 <td>
                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
-
-                        <a class="btn btn-info" href="{{ route('categories.show', $category->id) }}">Show</a>
 
                         <a class="btn btn-primary" href="{{ route('categories.edit', $category->id) }}">Edit</a>
 
