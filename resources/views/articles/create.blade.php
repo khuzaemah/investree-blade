@@ -39,14 +39,31 @@
                     <textarea class="form-control" style="height:150px" name="content" placeholder="Content"></textarea>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Categories:</strong>
+                    <select name="category_id">
+                        @foreach ($categories as $category)     
+                            @if (old('category_id', $articles->category_id) == $category->id )
+                            <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                            @else                       
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endif                       
+                        @endforeach
+                    </select>  
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Image:</strong>
                     <input type="file" name="image" class="form-control" placeholder="image">
                 </div>
             </div>
-            {{-- <input type="hidden" name="category_id" value="1">
-            <input type="hidden" name="user_id" value="1"> --}}
+
+            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+
             <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

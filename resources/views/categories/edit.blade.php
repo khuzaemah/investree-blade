@@ -35,13 +35,6 @@
                     <input type="text" name="name" value="{{ $category->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>User:</strong>
-                    <textarea class="form-control" style="height:150px" name="user_id"
-                        placeholder="User">{{ $category->user_id }}</textarea>
-                </div>
-            </div>
             <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

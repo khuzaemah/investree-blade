@@ -26,14 +26,20 @@
             <th>No</th>
             <th>Image</th>
             <th>Title</th>
-            <th>Content</th>
-            <th width="280px">Action</th>
+            <th>Category</th>
+            <th>User</th>
+            <th width="60%">Content</th>
+            <th width="5%">Action</th>
         </tr>
         @foreach ($articles as $article)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td><img src="/images/{{ $article->image }}" width="100px"></td>
+                <td>
+                    <img src="/images/{{ $article->image }}" width="200px">
+                </td>
                 <td>{{ $article->title }}</td>
+                <td>{{ $article->category->name }}</td>
+                <td>{{ $article->user->name }}</td>
                 <td>{{ $article->content }}</td>
                 <td>
                     <form action="{{ route('articles.destroy', $article->id) }}" method="POST">
