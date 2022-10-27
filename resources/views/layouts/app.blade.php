@@ -42,6 +42,9 @@
                         <li class="nav-item">
                             <a class="nav-link {{Request::is('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Article</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{Request::is('categories.index') ? 'active' : '' }}" href="{{ route('categories.index') }}">Categories</a>
+                        </li>
                         @endauth
                         <!-- Authentication Links -->
                         @guest
