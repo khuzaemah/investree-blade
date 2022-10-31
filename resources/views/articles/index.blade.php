@@ -33,9 +33,14 @@
         </tr>
         @foreach ($articles as $article)
             <tr>
-                <td>{{ ++$i }}</td>
+                <td>{{ $loop->iteration }}</td>
+                
                 <td>
-                    <img src="/images/{{ $article->image }}" width="200px">
+                    @if ($article->image)                   
+                        <img src="/images/{{ $article->image }}" width="200px">
+                    @else                
+                        <img src="https://via.placeholder.com/200/0000FF/808080?Text=Article" class="car d-img-top" alt="Article" >
+                    @endif
                 </td>
                 <td>{{ $article->title }}</td>
                 <td>{{ $article->category->name }}</td>
