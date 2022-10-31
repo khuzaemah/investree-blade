@@ -29,7 +29,7 @@
             <div class="form-group">
                 <strong>Image:</strong><br>
                 @if ($article->image)                   
-                        <img src="/images/{{ $article->image }}" width="200px">
+                        <img src="/images/{{ $article->image }}" width="500px">
                     @else                
                         <img src="https://via.placeholder.com/200/0000FF/808080?Text=Article" class="car d-img-top" alt="Article" >
                     @endif

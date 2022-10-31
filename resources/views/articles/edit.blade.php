@@ -37,6 +37,20 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Categories:</strong>
+                    <select name="category_id" class="form-control" >
+                        @foreach ($categories as $category)     
+                            @if (old('category_id', $article->category_id) == $category->id )
+                            <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                            @else                       
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endif                       
+                        @endforeach
+                    </select>  
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Content:</strong>
                     <textarea class="form-control" style="height:150px" name="content"
                         placeholder="Content">{{ $article->content }}</textarea>
