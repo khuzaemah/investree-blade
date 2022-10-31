@@ -10,8 +10,10 @@
                     @foreach ($articles as $article)              
                     <div class="col-md-4 mb-3">
                         <div class="card">
-                            @if ($article->image)                   
-                                <img src="/images/{{ $article->image }}" width="200px">
+                            @if ($article->image)
+                            <div class="text-center">
+                                <img src="/images/{{ $article->image }}" width="230px">
+                            </div>
                             @else                
                                 <img src="https://via.placeholder.com/200/0000FF/808080?Text=Article" class="car d-img-top" alt="Article" >
                             @endif 
